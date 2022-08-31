@@ -1,8 +1,8 @@
 {
-  "name": "my-new-app",
-  "productName": "my-new-app",
+  "name": "electron-js-game-dev-study",
+  "productName": "electron-js-game-dev-study",
   "version": "1.0.0",
-  "description": "My Electron application description",
+  "description": "Study game dev project with Electron",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",
@@ -24,22 +24,8 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "my_new_app"
+            "name": "electron-js-game-dev-study"
           }
-        },
-        {
-          "name": "@electron-forge/maker-zip",
-          "platforms": [
-            "darwin"
-          ]
-        },
-        {
-          "name": "@electron-forge/maker-deb",
-          "config": {}
-        },
-        {
-          "name": "@electron-forge/maker-rpm",
-          "config": {}
         }
       ],
       "plugins": [
