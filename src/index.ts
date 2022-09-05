@@ -1,4 +1,4 @@
-import { app, BrowserWindow } from 'electron';
+import { app, BrowserWindow, ipcMain } from 'electron';
 
 import trayicon from '~/images/trayicon.png';
 
@@ -27,6 +27,7 @@ const createWindow = (): void => {
     icon: path.join(__dirname, trayicon),
     webPreferences: {
       nodeIntegration: true,
+      contextIsolation: true,
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
   });
@@ -35,7 +36,21 @@ const createWindow = (): void => {
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools({
+    mode: 'detach',
+  });
+
+  // # Custom events from React App
+
+  // # Fullscreen
+  ipcMain.on('TOGGLE_FULLSCREEN', () => {
+    mainWindow.setFullScreen(!mainWindow.isFullScreen());
+  });
+
+  // # Minimize
+  ipcMain.on('MINIMIZE', () => {
+    mainWindow.minimize();
+  });
 };
 
 // This method will be called when Electron has finished

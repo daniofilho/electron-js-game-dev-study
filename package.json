@@ -38,9 +38,13 @@
               "config": "./webpack.renderer.config.js",
               "entryPoints": [
                 {
+                  "nodeIntegration": true,
                   "html": "./src/app/index.html",
                   "js": "./src/renderer.ts",
-                  "name": "main_window"
+                  "name": "main_window",
+                  "preload": {
+                    "js": "./src/preload.ts"
+                  }
                 }
               ]
             }

@@ -16,7 +16,8 @@
     },
     "typeRoots": [
 			"node_modules/@types",
-			"node_module/phaser/types"
+			"node_module/phaser/types",
+      "src/app/@types"
 		],
 		"types": [
 			"Phaser"
