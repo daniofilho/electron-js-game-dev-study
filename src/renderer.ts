@@ -35,5 +35,5 @@ import './app/scripts/core/main';
 // # Components
 
 // Top Bar
-import './app/components/atom/topbar/index';
-import './app/components/atom/topbar/styles.scss';
+import './app/components/topbar/index';
+import './app/components/topbar/styles.scss';
