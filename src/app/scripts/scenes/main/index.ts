@@ -6,7 +6,7 @@ export default class LoadingScene extends Scene {
   }
 
   preload(): void {
-    this.load.baseURL = '/images/';
+    this.load.baseURL = 'images/';
 
     this.load.image('sky', 'space3.png');
     this.load.image('logo', 'phaser3-logo.png');
