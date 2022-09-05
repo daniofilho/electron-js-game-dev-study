@@ -39,11 +39,6 @@ const createWindow = (): void => {
   if (isDebug()) {
     // and load the index.html of the app.
     mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-
-    // Open the DevTools.
-    mainWindow.webContents.openDevTools({
-      mode: 'detach',
-    });
   } else {
     const exApp = express();
     exApp.use(express.static(path.resolve(__dirname, '..', 'renderer')));
@@ -52,6 +47,11 @@ const createWindow = (): void => {
       mainWindow.loadURL(`http://localhost:${server.address()}/main_window/`);
     });
   }
+
+  // Open the DevTools.
+  mainWindow.webContents.openDevTools({
+    mode: 'detach',
+  });
 
   // # Custom events from React App
 
