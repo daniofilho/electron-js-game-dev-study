@@ -14,7 +14,7 @@
   "keywords": [],
   "author": {
     "name": "Dânio Filho",
-    "email": "danio.filho@navegarti.com.br"
+    "email": "daniofilho@me.com"
   },
   "license": "MIT",
   "config": {
@@ -79,7 +79,9 @@
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.18.1",
     "file-loader": "^6.2.0",
-    "phaser": "^3.55.2"
+    "phaser": "^3.55.2",
+    "url-loader": "^4.1.1"
   }
 }
