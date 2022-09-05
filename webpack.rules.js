@@ -44,16 +44,16 @@ module.exports = [
     ],
   },
   {
-    test: /\.(svg|png|jpg|gif)$/,
-    use: [
-      {
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-          outputPath: 'images/',
-          publicPath: 'images/',
-        },
+    test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+    use: {
+      loader: 'url-loader',
+      options: {
+        limit: 500 * 1024, // 500Kb
+        outputPath: 'images',
+        publicPath: '../images',
+        name: '[name]-[hash:6].[ext]',
+        esModule: false,
       },
-    ],
+    },
   },
 ];

@@ -16,10 +16,6 @@ if (require('electron-squirrel-startup')) {
   app.quit();
 }
 
-function isDebug() {
-  return process.env.npm_lifecycle_event === 'start';
-}
-
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -36,17 +32,8 @@ const createWindow = (): void => {
     },
   });
 
-  if (isDebug()) {
-    // and load the index.html of the app.
-    mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
-  } else {
-    const exApp = express();
-    exApp.use(express.static(path.resolve(__dirname, '..', 'renderer')));
-    const server = exApp.listen(0, () => {
-      console.log(`port is ${server.address()}`);
-      mainWindow.loadURL(`http://localhost:${server.address()}/main_window/`);
-    });
-  }
+  // and load the index.html of the app.
+  mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools({
