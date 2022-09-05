@@ -1,5 +1,4 @@
 import { app, BrowserWindow, ipcMain } from 'electron';
-import express from 'express';
 import path from 'path';
 
 import trayicon from '~/images/trayicon.png';

@@ -8,4 +8,5 @@ contextBridge.exposeInMainWorld('electronAPI', {
   },
   maximizeWindow: () => ipcRenderer.send('TOGGLE_FULLSCREEN', {}),
   closeWindow: () => window.close(),
+  baseURL: () => (process.env.npm_lifecycle_event === 'start' ? '/main_window/' : '/'),
 });

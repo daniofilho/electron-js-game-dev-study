@@ -1,16 +1,16 @@
 import { Scene } from 'phaser';
-
+import baseURL from '../../baseURL';
 export default class LoadingScene extends Scene {
   constructor() {
     super('loading-scene');
   }
 
   preload(): void {
-    this.load.baseURL = 'images/';
+    this.load.baseURL = `${baseURL}images`;
 
-    this.load.image('sky', 'space3.png');
-    this.load.image('logo', 'phaser3-logo.png');
-    this.load.image('red', 'red.png');
+    this.load.image('sky', '/space3.png');
+    this.load.image('logo', '/phaser3-logo.png');
+    this.load.image('red', '/red.png');
   }
 
   create(): void {
