@@ -50,7 +50,7 @@ module.exports = [
       options: {
         limit: 500 * 1024, // 500Kb
         outputPath: 'images',
-        publicPath: '../images',
+        publicPath: '/src/images',
         name: '[name]-[hash:6].[ext]',
         esModule: false,
       },
