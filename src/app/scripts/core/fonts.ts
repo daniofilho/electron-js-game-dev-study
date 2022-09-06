@@ -14,4 +14,4 @@ const loadFont = (name: string, url: string): void => {
     });
 };
 
-loadFont('Press Start', `${baseURL}/fonts/press-start-2p-v9-latin-regular.ttf`);
+loadFont('Press Start', `${baseURL}fonts/press-start-2p-v9-latin-regular.ttf`);
