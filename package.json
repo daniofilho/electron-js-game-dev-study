@@ -2,7 +2,7 @@
   "name": "electron-js-game-dev-study",
   "productName": "electron-js-game-dev-study",
   "version": "1.0.0",
-  "description": "Study game dev project with Electron",
+  "description": "Electron + JS Game dev Study",
   "main": ".webpack/main",
   "scripts": {
     "start": "electron-forge start",

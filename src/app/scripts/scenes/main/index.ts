@@ -31,5 +31,10 @@ export default class LoadingScene extends Scene {
     logo.setCollideWorldBounds(true);
 
     emitter.startFollow(logo);
+
+    this.add.text(20, 20, 'Electron + JS Game dev Study 🧟', {
+      fontFamily: 'Press Start',
+      fontSize: '20px',
+    });
   }
 }
